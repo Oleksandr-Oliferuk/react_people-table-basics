@@ -11,8 +11,6 @@ type Props = {
 export const TableRow: React.FC<Props> = ({ person }) => {
   const { slug } = useParams();
 
-  console.log(person);
-
   return (
     <tr
       data-cy="person"
