@@ -26,11 +26,7 @@ export const Table = () => {
 
           <tbody>
             {dataFromServer?.map((person: Person) => (
-              <TableRow
-                person={person}
-                key={person.slug}
-                people={dataFromServer}
-              />
+              <TableRow person={person} key={person.slug} />
             ))}
           </tbody>
         </table>

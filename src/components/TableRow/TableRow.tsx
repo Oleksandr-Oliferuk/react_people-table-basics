@@ -6,15 +6,12 @@ import { PersonLink } from '../PersonLink/PersonLink';
 
 type Props = {
   person: Person;
-  people: Person[];
 };
 
-export const TableRow: React.FC<Props> = ({ person, people }) => {
+export const TableRow: React.FC<Props> = ({ person }) => {
   const { slug } = useParams();
 
-  // Шукаємо mother та father в масиві people
-  const mother = people.find(p => p.name === person.motherName);
-  const father = people.find(p => p.name === person.fatherName);
+  console.log(person);
 
   return (
     <tr
@@ -32,16 +29,16 @@ export const TableRow: React.FC<Props> = ({ person, people }) => {
       <td>
         <PersonLink
           name={person.motherName || ''}
-          slug={mother?.slug}
-          sex={mother?.sex}
+          slug={person.mother?.slug}
+          sex={person.mother?.sex}
         />
       </td>
 
       <td>
         <PersonLink
           name={person.fatherName || ''}
-          slug={father?.slug}
-          sex={father?.sex}
+          slug={person.father?.slug}
+          sex={person.father?.sex}
         />
       </td>
     </tr>
