@@ -32,10 +32,12 @@ export const MyProvider = ({ children }: { children: ReactNode }) => {
           const peopleData = preparePeopleData(data);
 
           setDataFromServer(peopleData);
-          setIsLoading(false);
         })
         .catch(() => {
           setErrorMessage('Something went wrong');
+        })
+        .finally(() => {
+          setIsLoading(false);
         });
     }
   }, [isPeopleLocation]);
