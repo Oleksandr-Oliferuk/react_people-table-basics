@@ -1,11 +1,12 @@
-import { useContext } from 'react';
 import { TableRow } from '../TableRow/TableRow';
-import { dataContext } from '../dataContext/dataContext';
 import { Person } from '../../types';
 
-export const Table = () => {
-  const { dataFromServer, isLoading } = useContext(dataContext)!;
+type Props = {
+  people?: Person[];
+  isLoading: boolean;
+};
 
+export const Table: React.FC<Props> = ({ people, isLoading }) => {
   return (
     <>
       {!isLoading && (
@@ -25,7 +26,7 @@ export const Table = () => {
           </thead>
 
           <tbody>
-            {dataFromServer?.map((person: Person) => (
+            {people?.map((person: Person) => (
               <TableRow person={person} key={person.slug} />
             ))}
           </tbody>

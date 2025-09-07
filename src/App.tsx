@@ -41,7 +41,7 @@ export const App = () => {
 
       <main className="section">
         <div className="container">
-          {isPeopleLocation && <h1 className="title">People Page</h1>}
+          {/* {isPeopleLocation && <h1 className="title">People Page</h1>} */}
 
           <div className="block">
             <div className="box table-container">

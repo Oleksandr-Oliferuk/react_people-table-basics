@@ -26,7 +26,7 @@ export const TableRow: React.FC<Props> = ({ person }) => {
 
       <td>
         <PersonLink
-          name={person.motherName || ''}
+          name={person.motherName || '-'}
           slug={person.mother?.slug}
           sex={person.mother?.sex}
         />
@@ -34,7 +34,7 @@ export const TableRow: React.FC<Props> = ({ person }) => {
 
       <td>
         <PersonLink
-          name={person.fatherName || ''}
+          name={person.fatherName || '-'}
           slug={person.father?.slug}
           sex={person.father?.sex}
         />
